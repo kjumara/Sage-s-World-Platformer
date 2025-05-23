@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=4 uid="uid://dgxrddg3t0h55"]
+
+[ext_resource type="Script" uid="uid://p3dknjlbapj8" path="res://script/level.gd" id="1_623cv"]
+[ext_resource type="PackedScene" uid="uid://br1i5blomvop8" path="res://scenes/levels/level_two.tscn" id="2_a1u8d"]
+[ext_resource type="PackedScene" uid="uid://brd4ncj2g0yr8" path="res://scenes/UI/hud.tscn" id="2_u6gdm"]
+[ext_resource type="PackedScene" uid="uid://b5wdv8et6s6ti" path="res://scenes/UI/game_over_screen.tscn" id="3_a1u8d"]
+[ext_resource type="Texture2D" uid="uid://cpem4ka8j5lmo" path="res://assets/environments/other/Clouds1.png" id="4_8ri5e"]
+[ext_resource type="PackedScene" uid="uid://bya45vo6pmnr5" path="res://scenes/player.tscn" id="5_1057k"]
+[ext_resource type="TileSet" uid="uid://b0jt5s5halm3b" path="res://assets/environments/tilesets/base_tileset.tres" id="6_cxxkw"]
+[ext_resource type="PackedScene" uid="uid://beq3tilqra0s1" path="res://scenes/checkpoint.tscn" id="7_a1u8d"]
+[ext_resource type="PackedScene" uid="uid://b0ovmfcpx61wg" path="res://scenes/traps/death_zone.tscn" id="7_ajekx"]
+[ext_resource type="PackedScene" uid="uid://fl5213m8vyog" path="res://scenes/exit_area.tscn" id="8_6t0u7"]
+
+[node name="Level_one" type="Node2D"]
+script = ExtResource("1_623cv")
+next_level = ExtResource("2_a1u8d")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_u6gdm")]
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 112.0
+offset_bottom = 64.0
+
+[node name="Game_Over_Screen" parent="UI" instance=ExtResource("3_a1u8d")]
+visible = false
+
+[node name="base_objects" type="Node2D" parent="."]
+position = Vector2(768, 382)
+scale = Vector2(7.25547, 8.53976)
+
+[node name="Background" type="Sprite2D" parent="base_objects"]
+z_index = -1000
+texture_filter = 1
+texture_repeat = 3
+texture = ExtResource("4_8ri5e")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 180)
+
+[node name="Player" parent="base_objects" instance=ExtResource("5_1057k")]
+position = Vector2(-26.6006, -20.1411)
+scale = Vector2(0.413481, 0.351298)
+
+[node name="Marker2D" type="Marker2D" parent="base_objects"]
+position = Vector2(-63.6761, -2.57618)
+scale = Vector2(0.137827, 0.117099)
+
+[node name="Checkpoint" parent="base_objects" instance=ExtResource("7_a1u8d")]
+visible = false
+position = Vector2(-74.8401, -53.9828)
+
+[node name="platforms" type="TileMapLayer" parent="."]
+position = Vector2(575, 210)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAJAAQAAAADAAoAAAAJAAMAAAACAAQAAAAHAAQAAAADAAoAAAAHAAMAAAACAAQAAAAGAAQAAAAEAAIAAAAGAAMAAAADAAMAAAAAAAQAAAADAAoAAAAAAAMAAAACAAQAAAD7/wQAAAACAAoAAAD6/wQAAAACAAoAAAD5/wQAAAAEAAIAAAALAAgAAAABAAEAAAALAAcAAAAAAAIAAAALAAYAAAAAAAIAAAALAAUAAAAAAAIAAAALAAQAAAAAAAIAAAALAAMAAAABAAMAAAAKAAgAAAACAAAAAAAKAAcAAAADAAoAAAAKAAYAAAADAAoAAAAKAAUAAAABAAoAAAAKAAQAAAACAAoAAAAKAAMAAAACAAQAAAAJAAgAAAACAAAAAAAJAAcAAAADAAoAAAAJAAYAAAABAAoAAAAJAAUAAAACAAoAAAAHAAgAAAACAAAAAAAHAAcAAAABAAoAAAAHAAYAAAADAAoAAAAHAAUAAAACAAoAAAAGAAgAAAACAAAAAAAGAAcAAAACAAoAAAAGAAYAAAACAAoAAAAGAAUAAAAEAAMAAAAFAAgAAAADAAEAAAAFAAcAAAAEAAIAAAAFAAYAAAAEAAIAAAAFAAUAAAADAAMAAAAAAAgAAAACAAAAAAAAAAcAAAACAAoAAAAAAAYAAAACAAoAAAAAAAUAAAACAAoAAAD8/wgAAAACAAAAAAD8/wcAAAABAAoAAAD8/wYAAAADAAoAAAD8/wUAAAABAAQAAAD7/wgAAAACAAAAAAD7/wcAAAADAAoAAAD7/wYAAAACAAoAAAD7/wUAAAACAAoAAAD6/wgAAAACAAAAAAD6/wcAAAABAAoAAAD6/wYAAAACAAoAAAD6/wUAAAADAAoAAAD5/wgAAAADAAEAAAD5/wcAAAAEAAIAAAD5/wYAAAAEAAIAAAD5/wUAAAAEAAIAAAAIAAgAAAACAAAAAAAIAAcAAAADAAoAAAAIAAYAAAABAAoAAAAIAAUAAAACAAoAAAAIAAQAAAABAAoAAAAIAAMAAAACAAQAAAD//wgAAAACAAAAAAD//wcAAAADAAoAAAD//wYAAAACAAoAAAD//wUAAAADAAoAAAD//wQAAAACAAoAAAD//wMAAAACAAQAAAD+/wgAAAACAAAAAAD+/wcAAAABAAoAAAD+/wYAAAADAAoAAAD+/wUAAAAEAAMAAAD9/wgAAAACAAAAAAD9/wcAAAACAAoAAAD9/wYAAAABAAoAAAD9/wUAAAACAAQAAAD7/wMAAAACAAQAAAD6/wMAAAACAAQAAAD5/wMAAAADAAMAAAABAAMAAAACAAQAAAABAAQAAAADAAoAAAABAAUAAAACAAoAAAABAAYAAAACAAoAAAABAAcAAAACAAoAAAABAAgAAAACAAAAAAACAAMAAAABAAMAAAACAAQAAAAAAAIAAAACAAUAAAAAAAIAAAACAAYAAAAAAAIAAAACAAcAAAAAAAIAAAACAAgAAAABAAEAAAD8/wQAAAAAAAIAAAD8/wMAAAABAAMAAAD+/wQAAAAEAAIAAAD+/wMAAAADAAMAAAA=")
+tile_set = ExtResource("6_cxxkw")
+
+[node name="Starfruit" parent="." instance=ExtResource("8_6t0u7")]
+position = Vector2(1063, 297)
+scale = Vector2(5, 5)
+animation_choice = "l_blue"
+
+[node name="traps" type="Node2D" parent="."]
+
+[node name="DeathZone" parent="traps" instance=ExtResource("7_ajekx")]
+position = Vector2(-2643, 712)
+scale = Vector2(4.87966, 1.13078)
+
+[connection signal="health_depleted" from="UI/HUD" to="." method="_all_lives_lost"]
+[connection signal="body_entered" from="Starfruit" to="." method="_on_starfruit_touched"]
+[connection signal="body_entered" from="traps/DeathZone" to="." method="_on_death_zone_touched"]

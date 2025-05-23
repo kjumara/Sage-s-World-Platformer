@@ -1,0 +1,277 @@
+[gd_scene load_steps=4 format=3 uid="uid://tql2e2w35v60"]
+
+[ext_resource type="Texture2D" uid="uid://cpem4ka8j5lmo" path="res://assets/environments/other/Clouds1.png" id="1_2lgad"]
+[ext_resource type="Theme" uid="uid://coext6iiqflj8" path="res://assets/UI/game_theme.tres" id="1_228wp"]
+[ext_resource type="Script" uid="uid://dqnc245qmbd3d" path="res://script/credits.gd" id="2_21wcu"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_228wp")
+script = ExtResource("2_21wcu")
+
+[node name="Clouds1" type="Sprite2D" parent="."]
+modulate = Color(0.122145, 0.455405, 0.524662, 1)
+z_index = -1000
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(1376, 301)
+rotation = -0.00921185
+scale = Vector2(4.24619, 5.54982)
+texture = ExtResource("1_2lgad")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 180)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.0
+offset_top = 36.0
+offset_right = 195.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme = ExtResource("1_228wp")
+theme_override_font_sizes/font_size = 15
+text = "CREDITS"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 45.0
+offset_top = 144.0
+offset_right = 1104.0
+offset_bottom = 615.0
+theme = ExtResource("1_228wp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Created_By" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Created_By"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "CREATED BY"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Created_By"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Created_By"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "KATHRYN JUMARA"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite Assets" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Made By" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+text = "SPRITE  ASSETS  USED"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Name2" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+text = "ANOKOLISA
+"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Name" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+text = "SNOWHEX"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Name3" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Sprite Assets"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+text = "CUP NOOBLE"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Art Program" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "SOUND EFFECTS"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Aesprite2" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "BASTO
+"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Aesprite" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "JESUS   LASTRA
+"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Art Program" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "MUSIC"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Aesprite" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "NORTHIVANASTAN
+"
+
+[node name="Spacer4" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Game" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Game"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "MADE WITH"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Game"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Game"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "GODOT 4
+"
+
+[node name="Spacer3" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Art Program" type="VBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Art Program" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Art Program"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "ART PROGRAM"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Art Program"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Aesprite" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer2/Art Program"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "ASEPRITE
+
+"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Control2" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Menu" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_font_sizes/font_size = 7
+text = "MAIN  MENU"
+
+[node name="Control" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Quit" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_font_sizes/font_size = 7
+text = "QUIT"
+
+[node name="Control3" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3/Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer3/Quit" to="." method="_on_quit_pressed"]

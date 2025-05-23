@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://by6jm470q4obu"]
+
+[ext_resource type="Theme" uid="uid://coext6iiqflj8" path="res://assets/UI/game_theme.tres" id="1_1y4tv"]
+[ext_resource type="Script" uid="uid://c7qtgvawoddgl" path="res://script/start_menu.gd" id="2_4fmqt"]
+[ext_resource type="PackedScene" uid="uid://dgxrddg3t0h55" path="res://scenes/levels/level_one.tscn" id="3_1y4tv"]
+[ext_resource type="Texture2D" uid="uid://cpem4ka8j5lmo" path="res://assets/environments/other/Clouds1.png" id="4_uyt88"]
+
+[node name="Start_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1y4tv")
+script = ExtResource("2_4fmqt")
+level_one = ExtResource("3_1y4tv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -870.0
+offset_top = -647.0
+offset_right = 2538.0
+offset_bottom = 1326.0
+color = Color(0.34902, 0.607843, 0.796078, 1)
+
+[node name="Clouds1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(651, 296)
+scale = Vector2(3.5035, 3.84108)
+texture = ExtResource("4_uyt88")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 180)
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 385.0
+offset_right = 863.0
+offset_bottom = 564.0
+theme = ExtResource("1_1y4tv")
+theme_type_variation = &"play_button"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.0
+offset_top = 101.0
+offset_right = 1044.0
+offset_bottom = 294.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "SAGE'S WORLD"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

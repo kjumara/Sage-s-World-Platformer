@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://fvej835o2boi"]
+
+[ext_resource type="Theme" uid="uid://coext6iiqflj8" path="res://assets/UI/game_theme.tres" id="1_0g4u2"]
+[ext_resource type="Script" uid="uid://mvqnecampvk7" path="res://script/win_screen.gd" id="2_d3r46"]
+[ext_resource type="Texture2D" uid="uid://cpem4ka8j5lmo" path="res://assets/environments/other/Clouds1.png" id="4_d3r46"]
+[ext_resource type="Texture2D" uid="uid://ekx6s3ckllnb" path="res://assets/UI/full_heart.png" id="5_fx832"]
+[ext_resource type="Texture2D" uid="uid://v38vuo6ix2yj" path="res://assets/UI/empty_heart.png" id="5_qkwci"]
+[ext_resource type="Texture2D" uid="uid://dwpk2kagvovr8" path="res://assets/UI/blank_panel.png" id="6_2e4q3"]
+[ext_resource type="Texture2D" uid="uid://bf8javr6guydw" path="res://assets/UI/half_heart.png" id="6_xritg"]
+
+[node name="Win_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0g4u2")
+script = ExtResource("2_d3r46")
+
+[node name="Clouds1" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 0.709804, 0.72549, 1)
+z_index = -1000
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(1376, 301)
+rotation = -0.00921185
+scale = Vector2(4.24619, 5.54982)
+texture = ExtResource("4_d3r46")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 180)
+
+[node name="Empty_Heart_Particles" type="CPUParticles2D" parent="."]
+position = Vector2(977, 188)
+amount = 10
+texture = ExtResource("5_qkwci")
+lifetime = 2.02
+speed_scale = 1.5
+emission_shape = 4
+emission_points = PackedVector2Array(0, 0, -100, 0, -200, 0, -300, 0, -400, 0, -500, 0, -600, 0, -700, 0, -800, 0, -800, 100, -800, 200, -700, 250, -600, 250, -500, 250, -400, 250, -300, 250, -200, 250, -100, 250, 0, 250, 0, 100, 0, 175)
+emission_colors = PackedColorArray()
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 197.46
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_accel_max = 5.0
+scale_amount_min = 1.5
+scale_amount_max = 5.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="Half_Heart_Particles" type="CPUParticles2D" parent="."]
+position = Vector2(977, 188)
+amount = 30
+texture = ExtResource("6_xritg")
+lifetime = 2.02
+speed_scale = 1.5
+emission_shape = 4
+emission_points = PackedVector2Array(0, 0, -100, 0, -200, 0, -300, 0, -400, 0, -500, 0, -600, 0, -700, 0, -800, 0, -800, 100, -800, 200, -700, 250, -600, 250, -500, 250, -400, 250, -300, 250, -200, 250, -100, 250, 0, 250, 0, 100, 0, 175)
+emission_colors = PackedColorArray()
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 197.46
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_accel_max = 5.0
+scale_amount_min = 1.5
+scale_amount_max = 5.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(944, 165)
+
+[node name="BlankPanel" type="Sprite2D" parent="Node2D"]
+position = Vector2(-383.5, 114.25)
+scale = Vector2(10.5875, 10.4271)
+texture = ExtResource("6_2e4q3")
+
+[node name="Label" type="Label" parent="Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -688.5
+offset_top = -29.25
+offset_right = -108.5
+offset_bottom = 163.75
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0g4u2")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Full_Heart_Particles" type="CPUParticles2D" parent="."]
+position = Vector2(977, 188)
+amount = 30
+texture = ExtResource("5_fx832")
+lifetime = 2.02
+speed_scale = 1.5
+emission_shape = 4
+emission_points = PackedVector2Array(0, 0, -100, 0, -200, 0, -300, 0, -400, 0, -500, 0, -600, 0, -700, 0, -800, 0, -800, 100, -800, 200, -700, 250, -600, 250, -500, 250, -400, 250, -300, 250, -200, 250, -100, 250, 0, 250, 0, 100, 0, 175)
+emission_colors = PackedColorArray()
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 197.46
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_accel_max = 5.0
+scale_amount_min = 1.5
+scale_amount_max = 5.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="Game_Over_Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 96.0
+offset_right = 17.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0g4u2")
+script = ExtResource("2_d3r46")
+
+[node name="Main_Menu" type="Button" parent="Game_Over_Screen"]
+layout_mode = 2
+offset_left = -14.0
+offset_top = 396.0
+offset_right = 113.0
+offset_bottom = 444.0
+scale = Vector2(3.2, 2.96)
+text = "MAIN MENU"
+
+[node name="Quit" type="Button" parent="Game_Over_Screen"]
+layout_mode = 2
+offset_left = 711.0
+offset_top = 396.0
+offset_right = 838.0
+offset_bottom = 444.0
+scale = Vector2(3.2, 2.96)
+text = "QUIT"
+
+[node name="Credits" type="Button" parent="Game_Over_Screen"]
+layout_mode = 2
+offset_left = 349.0
+offset_top = 396.0
+offset_right = 476.0
+offset_bottom = 444.0
+scale = Vector2(3.2, 2.96)
+text = "CREDITS"
+
+[connection signal="pressed" from="Game_Over_Screen/Main_Menu" to="Game_Over_Screen" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Game_Over_Screen/Quit" to="Game_Over_Screen" method="_on_quit_pressed"]
+[connection signal="pressed" from="Game_Over_Screen/Credits" to="." method="_on_credits_pressed"]

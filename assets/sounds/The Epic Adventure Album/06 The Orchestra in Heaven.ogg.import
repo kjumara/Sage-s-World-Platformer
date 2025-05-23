@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0mgjdpbqwk2k"
+path="res://.godot/imported/06 The Orchestra in Heaven.ogg-ee55f5d4f957e64a057c18980efa314b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/The Epic Adventure Album/06 The Orchestra in Heaven.ogg"
+dest_files=["res://.godot/imported/06 The Orchestra in Heaven.ogg-ee55f5d4f957e64a057c18980efa314b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://4g8vybniap72"]
+
+[ext_resource type="Script" uid="uid://baqk2bk0n2yrd" path="res://script/move_floor_saw.gd" id="1_s4gur"]
+[ext_resource type="Texture2D" uid="uid://bxt1ic0ci1y6f" path="res://assets/environments/obstacles/spike_wheel/wheel_spike_base_large.png" id="2_82h5m"]
+[ext_resource type="Texture2D" uid="uid://bwefbhx4h1ovo" path="res://assets/environments/obstacles/spike_wheel/fspike_wheel_spritesheet.png" id="3_mqtll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4gur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82h5m"]
+atlas = ExtResource("3_mqtll")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqtll"]
+atlas = ExtResource("3_mqtll")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db7wq"]
+atlas = ExtResource("3_mqtll")
+region = Rect2(144, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdhor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82h5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqtll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db7wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqtll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82h5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Floor_Saw" type="Node2D"]
+script = ExtResource("1_s4gur")
+
+[node name="start" type="Marker2D" parent="."]
+position = Vector2(-15, -8)
+
+[node name="end" type="Marker2D" parent="."]
+position = Vector2(13, -8)
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("2_82h5m")
+
+[node name="top" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_s4gur")
+
+[node name="animation" type="AnimatedSprite2D" parent="top"]
+sprite_frames = SubResource("SpriteFrames_jdhor")
+autoplay = "default"
+frame_progress = 0.568497
+
+[node name="Camera2D" type="Camera2D" parent="top/animation"]
+position = Vector2(-13, 8)
+zoom = Vector2(5, 5)
+
+[connection signal="body_entered" from="top" to="." method="_on_player_entered"]

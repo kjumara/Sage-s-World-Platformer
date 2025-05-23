@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cglkhop60c0x6"]
+
+[ext_resource type="Script" uid="uid://cgejikxegintr" path="res://script/trap.gd" id="1_kprxg"]
+[ext_resource type="Texture2D" uid="uid://cj6cc6lq6ihi1" path="res://assets/environments/obstacles/spike_wheel/full_spike_wheel_spritesheet.png" id="2_846d5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_161w5"]
+atlas = ExtResource("2_846d5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxxip"]
+atlas = ExtResource("2_846d5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw68n"]
+atlas = ExtResource("2_846d5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_878ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_161w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxxip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw68n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxxip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi3xb"]
+radius = 12.0
+
+[node name="saw" type="Node2D"]
+script = ExtResource("1_kprxg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_878ni")
+autoplay = "default"
+frame_progress = 0.486321
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hi3xb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

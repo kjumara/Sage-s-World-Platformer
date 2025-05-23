@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://1l0kkdbfc65c"]
+
+[ext_resource type="Script" uid="uid://dtckydhnck60w" path="res://script/moving_platform.gd" id="1_1tdcd"]
+[ext_resource type="Texture2D" uid="uid://bdqcyecbcptn2" path="res://assets/environments/tilesets/moving_platforms.png" id="2_mb26n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afg43"]
+size = Vector2(28, 9)
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource("1_1tdcd")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="MovingPlatforms" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_mb26n")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_afg43")
