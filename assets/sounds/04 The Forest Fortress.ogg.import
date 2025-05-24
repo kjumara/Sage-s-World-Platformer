@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chlycr1ojunuf"
+path="res://.godot/imported/04 The Forest Fortress.ogg-219216fb89a3d3aa2fe6547ff1435132.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/04 The Forest Fortress.ogg"
+dest_files=["res://.godot/imported/04 The Forest Fortress.ogg-219216fb89a3d3aa2fe6547ff1435132.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

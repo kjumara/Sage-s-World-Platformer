@@ -60,6 +60,9 @@ position = Vector2(575, 210)
 scale = Vector2(5, 5)
 speed = 250
 
+[node name="Camera2D" parent="base_objects/Player" index="2"]
+zoom = Vector2(0.75, 0.75)
+
 [node name="Marker2D" type="Marker2D" parent="base_objects"]
 position = Vector2(166, 279)
 
@@ -91,7 +94,7 @@ scale = Vector2(8, 8)
 [node name="tiles" type="Node2D" parent="."]
 
 [node name="MovingPlatform" parent="tiles" instance=ExtResource("12_4pegr")]
-position = Vector2(4739, -10)
+position = Vector2(4720, -10)
 scale = Vector2(10, 5)
 offset = Vector2(200, 0)
 duration = 9.0
@@ -112,7 +115,7 @@ duration = 9.0
 platform_type = "stone"
 
 [node name="MovingPlatform3" parent="tiles" instance=ExtResource("12_4pegr")]
-position = Vector2(765, 321)
+position = Vector2(725, 321)
 scale = Vector2(10, 5)
 offset = Vector2(100, 0)
 
@@ -180,3 +183,5 @@ scale = Vector2(8, 8)
 [connection signal="touched_player" from="traps/spike_trap3" to="." method="_on_trap_touched_player"]
 [connection signal="touched_player" from="traps/spike_trap4" to="." method="_on_trap_touched_player"]
 [connection signal="touched_player" from="traps/spike_trap5" to="." method="_on_trap_touched_player"]
+
+[editable path="base_objects/Player"]
